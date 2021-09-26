@@ -1,3 +1,7 @@
 {
-    "MONGO_URI": "mongodb+srv://darwinknowless:29Desember@cluster0.bvggs.mongodb.net/simple-API?retryWrites=true&w=majority"
+    "MONGO_URI": "mongodb+srv://darwinknowless:29Desember@cluster0.bvggs.mongodb.net/simple-API?retryWrites=true&w=majority",
+    "JWT_SECRET": "Aigoooooooooo",
+    "GITHUB_CLIENT_ID": "58b3e5f3de159bf22486",
+    "GITHUB_CLIENT_SECRET": "d23db3a4829c8fdc59ad047f3b85a853e78db394",
+    "GITHUB_CALLBACK_URL": "http://localhost:5000/github/authorizing"
 }
