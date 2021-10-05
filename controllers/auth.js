@@ -21,11 +21,11 @@ exports.loguser = async (req, res) => {
 		return res.status(400).json({ errors: errors.array() });
 	}
 
-	const { email, password } = req.body;
+	const { email, username, password } = req.body;
 
 	try {
 		// See if user exists
-		let user = await User.findOne({ email });
+		let user = await User.findOne(email ? { email } : { username });
 		if (!user) {
 			res.status(400).json({
 				errors: [{ msg: 'Invalid Credentials' }],

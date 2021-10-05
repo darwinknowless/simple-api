@@ -12,11 +12,11 @@ exports.signuser = async (req, res) => {
 		return res.status(400).json({ errors: errors.array() });
 	}
 
-	const { name, email, password } = req.body;
+	const { name, email, username, password } = req.body;
 
 	try {
 		// See if user exists
-		let user = await User.findOne({ email });
+		let user = await User.findOne(email ? { email } : { username });
 		if (user) {
 			res.status(400).json({
 				errors: [{ msg: 'User already exists' }],
@@ -33,6 +33,7 @@ exports.signuser = async (req, res) => {
 		user = new User({
 			name,
 			email,
+			username,
 			avatar,
 			password,
 		});
